@@ -1,0 +1,12 @@
+[
+    {
+        "Name": "Manoj",
+        "Company": "Cisco",
+        "Job": "Python tester"
+    },
+    {
+        "Name": "Anki",
+        "Company": "Wipro",
+        "Job": "Java tester"
+    }
+]

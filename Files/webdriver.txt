@@ -1,0 +1,63 @@
+1) What is Selenium WebDriver ?
+WebDriver is a web automation framework that allows you to execute your tests against different browsers, not just Firefox, Chrome (unlike Selenium IDE).
+WebDriver also enables you to use a programming language in creating your test scripts (not possible in Selenium IDE).
+
+###Very Important about working with files
+#...............First way .............
+#To get only directories from a pafrent directory
+#https://realpython.com/working-with-files-in-python/ ...refer this url
+import os
+# List all subdirectories using os.listdir
+basepath = 'C:\\Users\\Manoj\\PycharmProjects\\LastSeleniumTest\\Files'
+for entry in os.listdir(basepath):
+    if os.path.isdir(os.path.join(basepath, entry)):
+        print(entry)
+
+#To get only flies from a parent directory
+import os
+# List all files in a directory using os.listdir
+basepath = 'C:\\Users\\Manoj\\PycharmProjects\\LastSeleniumTest\\Files'
+for entry in os.listdir(basepath):
+    if os.path.isfile(os.path.join(basepath, entry)):
+        print(entry)
+
+
+#...............Second way .............
+#To get only directories from a pafrent directory
+#https://realpython.com/working-with-files-in-python/ ...refer this url
+import os
+# List all subdirectories using scandir()
+basepath = 'C:\\Users\\Manoj\\PycharmProjects\\LastSeleniumTest\\Files'
+with os.scandir(basepath) as entries:
+    for entry in entries:
+        if entry.is_dir():
+            print(entry.name)
+
+#To get only flies from a parent directory
+import os
+# List all files in a directory using scandir()
+basepath = 'C:\\Users\\Manoj\\PycharmProjects\\LastSeleniumTest\\Files'
+with os.scandir(basepath) as entries:
+    for entry in entries:
+        if entry.is_file():
+            print(entry.name)
+
+
+#....................Third way.......................
+#To get only directories from a pafrent directory
+#https://realpython.com/working-with-files-in-python/ ...refer this url
+from pathlib import Path
+# List all subdirectory using pathlib
+basepath = Path('C:\\Users\\Manoj\\PycharmProjects\\LastSeleniumTest\\Files''')
+for entry in basepath.iterdir():
+    if entry.is_dir():
+        print(entry.name)
+
+#To get only flies from a parent directory
+import os
+from pathlib import Path
+basepath = Path('C:\\Users\\Manoj\\PycharmProjects\\LastSeleniumTest\\Files')
+files_in_basepath = basepath.iterdir()
+for item in files_in_basepath:
+    if item.is_file():
+        print(item.name)
